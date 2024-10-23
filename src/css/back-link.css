@@ -6,26 +6,15 @@
   margin-left: 32px;
   border: 1px solid;
   border-radius: 8px;
-  color: rgb(34, 32, 36);
-  background-color: rgb(180, 142, 215);
+  color: rgb(255, 255, 255);
+  background-color: #bd34fe;
 }
-.nav-link {
-  position: relative;
-  display: block;
-  padding: 4px 8px;
-  margin-top: 32px;
-  border: 1px solid;
-  border-radius: 8px;
-  color: rgb(34, 32, 36);
-  background-color: rgb(180, 142, 215);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
- color: rgb(34, 32, 36);
-}
+
 .back-link:hover,
 .back-link:focus {
-  color: #747bff;
+  color: #020310;
+  background-color: #41d1ff;
+  border: solid, 1px, #41d1ff;
 }
 .back-link::after {
   content: '';

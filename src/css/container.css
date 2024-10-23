@@ -1,9 +1,15 @@
 /* Styles for Mobile devices */
 .container {
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
   min-width: 320px;
   max-width: 375px;
   margin: 0 auto;
   padding: 16px 16px;
+
 }
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {

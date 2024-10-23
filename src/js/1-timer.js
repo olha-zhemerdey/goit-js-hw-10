@@ -15,7 +15,7 @@ const hoursE = document.querySelector('.value[data-hours]');
 const minutesE = document.querySelector('.value[data-minutes]');
 const secondsE = document.querySelector('.value[data-seconds]');
 
-timerBtn.disable = true;
+timerBtn.disabled = true;
 
 let userSelectedDate = null;
 
@@ -27,7 +27,7 @@ const options = {
   onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
     if (Date.now() > selectedDates[0]) {
-      timerBtn.disable = true;
+      timerBtn.disabled = true;
 
       iziToast.error({
         title: 'Error',
@@ -40,10 +40,10 @@ const options = {
         displayMode: 2,
       });
     } else {
-      timerBtn.disable = false;
+      timerBtn.disabled = false;
       iziToast.success({
         title: 'OK',
-        message: 'You can press "Start"!',
+        message: 'Press Start button!',
       });
     }
   },
@@ -56,11 +56,12 @@ const currentDate = Date.now();
 timerBtn.addEventListener('click', onClickStartBtn);
 
 function onClickStartBtn() {
+
   timerBtn.disabled = true;
   dateInput.disabled = true;
 
   const timer = setInterval(() => {
-    // const targetDate = new Date(input.value);
+    const currentDate = Date.now();
     const ms = userSelectedDate - currentDate;
 
     const { days, hours, minutes, seconds } = convertMs(ms);
@@ -70,23 +71,9 @@ function onClickStartBtn() {
     minutesE.textContent = addLeadingZero(minutes);
     secondsE.textContent = addLeadingZero(seconds);
 
-    if (
-      seconds === 0 &&
-     minutes === 0 &&
-      hours === 0 &&
-     days === 0
-    )
-
-    // const isTimerFinished = [days, hours, minutes, seconds].every(
-    //   value => value === 0
-    // );
-
-    // if (isTimerFinished)
-      
-      
-      {
+    if (seconds === 0 && minutes === 0 && hours === 0 && days === 0) {
       clearInterval(timer);
-      dateInput.isActive = true;
+      dateInput.disabled = false;
     }
   }, 1000);
 }
@@ -111,3 +98,7 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+
+
+
+
