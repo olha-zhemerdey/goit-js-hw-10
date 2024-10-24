@@ -51,12 +51,9 @@ const options = {
 
 flatpickr(dateInput, options);
 
-const currentDate = Date.now();
-
 timerBtn.addEventListener('click', onClickStartBtn);
 
 function onClickStartBtn() {
-
   timerBtn.disabled = true;
   dateInput.disabled = true;
 
@@ -98,7 +95,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
-
-
-
